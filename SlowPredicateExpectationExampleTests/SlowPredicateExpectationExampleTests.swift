@@ -15,6 +15,9 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
     //
     // I decided to copy paste the test implementation rather than DRY it in a method so that each
     // test tells its own story without having to jump between it and an helper method.
+    //
+    // Also, if all tests were to fail on the same helper method, the follow failure UI would get
+    // confusing.
 
     func testWithPredicate_0_2s() {
         // Arrange SUT
@@ -61,6 +64,19 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         wait(for: [expectation], timeout: 0.8)
     }
 
+    func testWithPredicate_0_9s() {
+        let sut = AsyncWorkPerformer()
+        let expectation = XCTNSPredicateExpectation(
+            predicate: NSPredicate { _, _ in sut.flag },
+            object: .none
+        )
+
+        sut.toggleAsynchronousley(after: 0.1)
+
+        XCTExpectFailure(strict: true)
+        wait(for: [expectation], timeout: 0.9)
+    }
+
     func testWithPredicate_1s() {
         let sut = AsyncWorkPerformer()
         let expectation = XCTNSPredicateExpectation(
@@ -72,6 +88,18 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
 
         XCTExpectFailure(strict: false) // Not strict because this sometimes fails sometimes doesn't
         wait(for: [expectation], timeout: 1)
+    }
+
+    func testWithPredicate_1_1s() {
+        let sut = AsyncWorkPerformer()
+        let expectation = XCTNSPredicateExpectation(
+            predicate: NSPredicate { _, _ in sut.flag },
+            object: .none
+        )
+
+        sut.toggleAsynchronousley(after: 0.1)
+
+        wait(for: [expectation], timeout: 1.1)
     }
 
     func testWithPredicate_2s() {
