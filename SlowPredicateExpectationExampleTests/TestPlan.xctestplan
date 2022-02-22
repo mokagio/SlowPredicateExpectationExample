@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "DF086222-0AB9-45FF-A2A4-0120D76AC697",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testRepetitionMode" : "fixedIterations",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SlowPredicateExpectationExample.xcodeproj",
+        "identifier" : "3FD2DD4727C45CCD00407FF9",
+        "name" : "SlowPredicateExpectationExampleTests"
+      }
+    }
+  ],
+  "version" : 1
+}

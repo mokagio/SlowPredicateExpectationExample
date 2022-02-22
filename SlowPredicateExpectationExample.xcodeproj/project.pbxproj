@@ -27,6 +27,7 @@
 		3FD2DD4327C45CCC00407FF9 /* SlowPredicateExpectationExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlowPredicateExpectationExample.h; sourceTree = "<group>"; };
 		3FD2DD4827C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlowPredicateExpectationExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD2DD4D27C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPredicateExpectationExampleTests.swift; sourceTree = "<group>"; };
+		3FD2DD5827C4637400407FF9 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD2DD4D27C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.swift */,
+				3FD2DD5827C4637400407FF9 /* TestPlan.xctestplan */,
 			);
 			path = SlowPredicateExpectationExampleTests;
 			sourceTree = "<group>";
