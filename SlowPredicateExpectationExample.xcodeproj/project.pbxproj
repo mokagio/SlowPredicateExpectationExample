@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F22EB7E27C7834000A02FF3 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 3F22EB7D27C7834000A02FF3 /* Nimble */; };
 		3FD2DD4927C45CCD00407FF9 /* SlowPredicateExpectationExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD2DD4027C45CCC00407FF9 /* SlowPredicateExpectationExample.framework */; };
 		3FD2DD4E27C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2DD4D27C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.swift */; };
 		3FD2DD4F27C45CCD00407FF9 /* SlowPredicateExpectationExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FD2DD4327C45CCC00407FF9 /* SlowPredicateExpectationExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD2DD4927C45CCD00407FF9 /* SlowPredicateExpectationExample.framework in Frameworks */,
+				3F22EB7E27C7834000A02FF3 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +132,9 @@
 				3FD2DD4B27C45CCD00407FF9 /* PBXTargetDependency */,
 			);
 			name = SlowPredicateExpectationExampleTests;
+			packageProductDependencies = (
+				3F22EB7D27C7834000A02FF3 /* Nimble */,
+			);
 			productName = SlowPredicateExpectationExampleTests;
 			productReference = 3FD2DD4827C45CCD00407FF9 /* SlowPredicateExpectationExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -161,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 3FD2DD3627C45CCC00407FF9;
+			packageReferences = (
+				3F22EB7C27C7834000A02FF3 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 3FD2DD4127C45CCC00407FF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -452,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F22EB7C27C7834000A02FF3 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F22EB7D27C7834000A02FF3 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F22EB7C27C7834000A02FF3 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3FD2DD3727C45CCC00407FF9 /* Project object */;
 }

@@ -1,5 +1,6 @@
-import XCTest
+import Nimble
 @testable import SlowPredicateExpectationExample
+import XCTest
 
 class SlowPredicateExpectationExampleTests: XCTestCase {
 
@@ -112,6 +113,16 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         sut.toggleAsynchronousley(after: 0.1)
 
         wait(for: [expectation], timeout: 2)
+    }
+
+    // MARK: Nimble examples
+
+    func testWithNimble() {
+        let sut = AsyncWorkPerformer()
+
+        sut.toggleAsynchronousley(after: 0.1)
+
+        expect(sut.flag).toEventually(beTrue())
     }
 }
 
