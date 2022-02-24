@@ -19,7 +19,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
     // Also, if all tests were to fail on the same helper method, the follow failure UI would get
     // confusing.
 
-    func testWithPredicate_0_2s() {
+    func testWithPredicate_0s200ms() {
         // Arrange SUT
         let sut = AsyncWorkPerformer()
         // Arrange async expectation
@@ -38,7 +38,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         wait(for: [expectation], timeout: 0.2)
     }
 
-    func testWithPredicate_0_4s() {
+    func testWithPredicate_0s400s() {
         let sut = AsyncWorkPerformer()
         let expectation = XCTNSPredicateExpectation(
             predicate: NSPredicate { _, _ in sut.flag },
@@ -51,7 +51,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         wait(for: [expectation], timeout: 0.4)
     }
 
-    func testWithPredicate_0_8s() {
+    func testWithPredicate_0s800ms() {
         let sut = AsyncWorkPerformer()
         let expectation = XCTNSPredicateExpectation(
             predicate: NSPredicate { _, _ in sut.flag },
@@ -64,7 +64,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         wait(for: [expectation], timeout: 0.8)
     }
 
-    func testWithPredicate_0_9s() {
+    func testWithPredicate_0s900ms() {
         let sut = AsyncWorkPerformer()
         let expectation = XCTNSPredicateExpectation(
             predicate: NSPredicate { _, _ in sut.flag },
@@ -90,7 +90,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
 
-    func testWithPredicate_1_1s() {
+    func testWithPredicate_1s100ms() {
         let sut = AsyncWorkPerformer()
         let expectation = XCTNSPredicateExpectation(
             predicate: NSPredicate { _, _ in sut.flag },
