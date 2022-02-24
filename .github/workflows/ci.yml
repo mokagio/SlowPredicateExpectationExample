@@ -5,9 +5,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup xcbeautify
+        run: |
+          brew tap thii/xcbeautify https://github.com/thii/xcbeautify.git
+          brew install xcbeautify
       - name: Tests
         run: |
           xcodebuild test \
             -project SlowPredicateExpectationExample.xcodeproj \
             -scheme SlowPredicateExpectationExample \
-            -destination 'platform=iOS Simulator,name=iPhone 13 Pro' -sdk iphonesimulator # | xcbeautify
+            -destination 'platform=iOS Simulator,name=iPhone 13 Pro' -sdk iphonesimulator | xcbeautify
