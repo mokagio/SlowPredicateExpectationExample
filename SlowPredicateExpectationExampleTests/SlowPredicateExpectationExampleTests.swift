@@ -8,7 +8,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
     /// behavior.
     func testBaseline() {
         let sut = AsyncWorkPerformer()
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
         XCTAssertFalse(AsyncWorkPerformer().flag)
     }
 
@@ -32,7 +32,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
         )
 
         // Act
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         // Assert. Or rather, wait for assertion to be met.
         XCTExpectFailure(strict: true)
@@ -46,7 +46,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         XCTExpectFailure(strict: true)
         wait(for: [expectation], timeout: 0.4)
@@ -59,7 +59,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         XCTExpectFailure(strict: true)
         wait(for: [expectation], timeout: 0.8)
@@ -72,7 +72,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         XCTExpectFailure(strict: true)
         wait(for: [expectation], timeout: 0.9)
@@ -85,7 +85,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         XCTExpectFailure(strict: false) // Not strict because this sometimes fails sometimes doesn't
         wait(for: [expectation], timeout: 1)
@@ -98,7 +98,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         wait(for: [expectation], timeout: 1.1)
     }
@@ -110,7 +110,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
             object: .none
         )
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         wait(for: [expectation], timeout: 2)
     }
@@ -120,7 +120,7 @@ class SlowPredicateExpectationExampleTests: XCTestCase {
     func testWithNimble() {
         let sut = AsyncWorkPerformer()
 
-        sut.toggleAsynchronousley(after: 0.1)
+        sut.toggleAsynchronously(after: 0.1)
 
         expect(sut.flag).toEventually(beTrue())
     }
@@ -130,7 +130,7 @@ class AsyncWorkPerformer {
 
     private(set) var flag = false
 
-    func toggleAsynchronousley(after interval: TimeInterval) {
+    func toggleAsynchronously(after interval: TimeInterval) {
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) { [weak self] in
             self?.flag.toggle()
         }
